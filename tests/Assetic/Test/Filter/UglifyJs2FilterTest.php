@@ -13,7 +13,7 @@ namespace Assetic\Test\Filter;
 
 use Assetic\Asset\FileAsset;
 use Assetic\Filter\UglifyJs2Filter;
-use Symfony\Component\Process\ProcessBuilder;
+use Assetic\ProcessBuilder;
 
 /**
  * @group integration

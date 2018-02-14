@@ -14,7 +14,7 @@ namespace Assetic\Filter\GoogleClosure;
 use Assetic\Asset\AssetInterface;
 use Assetic\Exception\FilterException;
 use Assetic\Util\FilesystemUtils;
-use Symfony\Component\Process\ProcessBuilder;
+use Assetic\ProcessBuilder;
 
 /**
  * Filter for the Google Closure Compiler JAR.

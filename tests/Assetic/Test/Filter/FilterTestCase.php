@@ -13,7 +13,7 @@ namespace Assetic\Test\Filter;
 
 use Assetic\Test\TestCase;
 use Symfony\Component\Process\ExecutableFinder;
-use Symfony\Component\Process\ProcessBuilder;
+use Assetic\ProcessBuilder;
 
 abstract class FilterTestCase extends TestCase
 {
