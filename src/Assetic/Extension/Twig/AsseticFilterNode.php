@@ -11,7 +11,7 @@
 
 namespace Assetic\Extension\Twig;
 
-class AsseticFilterNode extends \Twig_Node_Expression_Function
+class AsseticFilterNode extends \Twig\Node\Expression\FunctionExpression
 {
     protected function compileCallable(\Twig_Compiler $compiler)
     {
