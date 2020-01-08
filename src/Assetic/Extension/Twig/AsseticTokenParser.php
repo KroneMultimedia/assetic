@@ -14,7 +14,7 @@ namespace Assetic\Extension\Twig;
 use Assetic\Asset\AssetInterface;
 use Assetic\Factory\AssetFactory;
 
-class AsseticTokenParser extends \Twig_TokenParser
+class AsseticTokenParser extends \Twig\TokenParser\AbstractTokenParser
 {
     private $factory;
     private $tag;
