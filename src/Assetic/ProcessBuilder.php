@@ -233,7 +233,7 @@ class ProcessBuilder
         $arguments = array_merge($this->prefix, $this->arguments);
         $process = new Process($arguments, $this->cwd, $this->env, $this->input, $this->timeout, $this->options);
         if ($this->inheritEnv) {
-            $process->inheritEnvironmentVariables();
+            //$process->inheritEnvironmentVariables();
         }
         if ($this->outputDisabled) {
             $process->disableOutput();
