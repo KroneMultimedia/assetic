@@ -13,8 +13,9 @@ namespace Assetic\Extension\Twig;
 
 use Assetic\Factory\AssetFactory;
 use Assetic\ValueSupplierInterface;
+use Twig\Extension\AbstractExtension;
 
-class AsseticExtension extends \Twig_Extension implements \Twig\Extension\GlobalsInterface
+class AsseticExtension extends AbstractExtension implements \Twig\Extension\GlobalsInterface
 {
     protected $factory;
     protected $functions;
@@ -54,7 +55,7 @@ class AsseticExtension extends \Twig_Extension implements \Twig\Extension\Global
         return $functions;
     }
 
-    public function getGlobals()
+    public function getGlobals(): array
     {
         return array(
             'assetic' => array(
