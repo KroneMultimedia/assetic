@@ -77,7 +77,7 @@ class AssetCollectionFilterIterator extends \RecursiveFilterIterator
     /**
      * Passes visited objects and source URLs to the child iterator.
      */
-    public function getChildren()
+    public function getChildren(): \?RecursiveFilterIterator
     {
         return new self($this->getInnerIterator()->getChildren(), $this->visited, $this->sources);
     }

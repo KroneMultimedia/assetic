@@ -36,7 +36,7 @@ class AsseticExtension extends AbstractExtension implements \Twig\Extension\Glob
         }
     }
 
-    public function getTokenParsers()
+    public function getTokenParsers(): array
     {
         return array(
             new AsseticTokenParser($this->factory, 'javascripts', 'js/*.js'),
@@ -45,7 +45,7 @@ class AsseticExtension extends AbstractExtension implements \Twig\Extension\Glob
         );
     }
 
-    public function getFunctions()
+    public function getFunctions(): array
     {
         $functions = array();
         foreach ($this->functions as $function => $filter) {

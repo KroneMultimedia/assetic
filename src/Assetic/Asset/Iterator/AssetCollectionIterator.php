@@ -101,7 +101,7 @@ class AssetCollectionIterator implements \RecursiveIterator
         return false !== current($this->assets);
     }
 
-    public function hasChildren()
+    public function hasChildren(): bool
     {
         return current($this->assets) instanceof AssetCollectionInterface;
     }
@@ -109,7 +109,7 @@ class AssetCollectionIterator implements \RecursiveIterator
     /**
      * @uses current()
      */
-    public function getChildren()
+    public function getChildren(): \?RecursiveIterator
     {
         return new self($this->current(), $this->clones);
     }

@@ -42,7 +42,7 @@ class AsseticTokenParser extends AbstractTokenParser
         $this->single     = $single;
         $this->extensions = $extensions;
     }
-    public function parse(Token $token)
+    public function parse(Token $token): Node
     {
         $inputs = array();
         $filters = array();
@@ -122,7 +122,7 @@ class AsseticTokenParser extends AbstractTokenParser
         $asset = $this->factory->createAsset($inputs, $filters, $attributes + array('name' => $name));
         return $this->createBodyNode($asset, $body, $inputs, $filters, $name, $attributes, $token->getLine(), $this->getTag());
     }
-    public function getTag()
+    public function getTag(): string
     {
         return $this->tag;
     }
