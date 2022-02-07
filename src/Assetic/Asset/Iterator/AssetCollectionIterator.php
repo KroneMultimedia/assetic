@@ -109,7 +109,7 @@ class AssetCollectionIterator implements \RecursiveIterator
     /**
      * @uses current()
      */
-    public function getChildren(): \?RecursiveIterator
+    public function getChildren(): ?\RecursiveIterator
     {
         return new self($this->current(), $this->clones);
     }
