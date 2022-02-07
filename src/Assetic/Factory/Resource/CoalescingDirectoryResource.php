@@ -70,7 +70,7 @@ class CoalescingDirectoryResource implements IteratorResourceInterface
         return implode(',', $parts);
     }
 
-    public function getIterator()
+    public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->getFileResources());
     }

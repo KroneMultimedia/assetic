@@ -41,7 +41,7 @@ class AsseticNode extends Node
         );
         parent::__construct($nodes, $attributes, $lineno, $tag);
     }
-    public function compile(Compiler $compiler)
+    public function compile(Compiler $compiler): void
     {
         $compiler->addDebugInfo($this);
         $combine = $this->getAttribute('combine');
