@@ -37,7 +37,7 @@ class AssetCollectionIterator implements \RecursiveIterator
         $this->output  = $coll->getTargetPath();
         $this->clones  = $clones;
 
-        if (false === $pos = strrpos($this->output, '.')) {
+        if (!is_null($this->output) && false === $pos = strrpos($this->output, '.')) {
             $this->output .= '_*';
         } else {
             $this->output = substr($this->output, 0, $pos).'_*'.substr($this->output, $pos);
@@ -51,7 +51,7 @@ class AssetCollectionIterator implements \RecursiveIterator
      *
      * @return \Assetic\Asset\AssetInterface
      */
-    public function current($raw = false)
+    public function current($raw = false): mixed
     {
         $asset = current($this->assets);
 
@@ -81,22 +81,22 @@ class AssetCollectionIterator implements \RecursiveIterator
         return $clone;
     }
 
-    public function key()
+    public function key(): mixed
     {
         return key($this->assets);
     }
 
-    public function next()
+    public function next(): void
     {
         return next($this->assets);
     }
 
-    public function rewind()
+    public function rewind(): void
     {
         return reset($this->assets);
     }
 
-    public function valid()
+    public function valid(): bool
     {
         return false !== current($this->assets);
     }

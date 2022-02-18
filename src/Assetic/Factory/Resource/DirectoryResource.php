@@ -11,6 +11,7 @@
 
 namespace Assetic\Factory\Resource;
 
+use RecursiveFilterIterator;
 use Traversable;
 
 /**
@@ -93,7 +94,7 @@ class DirectoryResource implements IteratorResourceInterface
  */
 class DirectoryResourceIterator extends \RecursiveIteratorIterator
 {
-    public function current()
+    public function current(): mixed
     {
         return new FileResource(parent::current()->getPathname());
     }
@@ -116,7 +117,7 @@ class DirectoryResourceFilterIterator extends \RecursiveFilterIterator
         $this->pattern = $pattern;
     }
 
-    public function accept()
+    public function accept(): bool
     {
         $file = $this->current();
         $name = $file->getBasename();
@@ -128,7 +129,7 @@ class DirectoryResourceFilterIterator extends \RecursiveFilterIterator
         return null === $this->pattern || 0 < preg_match($this->pattern, $name);
     }
 
-    public function getChildren()
+    public function getChildren() ?RecursiveFilterIterator
     {
         return new self(new \RecursiveDirectoryIterator($this->current()->getPathname(), \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), $this->pattern);
     }
