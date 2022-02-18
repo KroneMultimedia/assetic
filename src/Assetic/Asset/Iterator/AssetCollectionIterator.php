@@ -88,7 +88,7 @@ class AssetCollectionIterator implements \RecursiveIterator
 
     public function next(): void
     {
-        return next($this->assets);
+      next($this->assets);
     }
 
     public function rewind(): void
