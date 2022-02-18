@@ -129,7 +129,7 @@ class DirectoryResourceFilterIterator extends \RecursiveFilterIterator
         return null === $this->pattern || 0 < preg_match($this->pattern, $name);
     }
 
-    public function getChildren() ?RecursiveFilterIterator
+    public function getChildren(): ?RecursiveFilterIterator
     {
         return new self(new \RecursiveDirectoryIterator($this->current()->getPathname(), \RecursiveDirectoryIterator::FOLLOW_SYMLINKS), $this->pattern);
     }
