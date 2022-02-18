@@ -93,7 +93,7 @@ class AssetCollectionIterator implements \RecursiveIterator
 
     public function rewind(): void
     {
-        return reset($this->assets);
+      reset($this->assets);
     }
 
     public function valid(): bool
