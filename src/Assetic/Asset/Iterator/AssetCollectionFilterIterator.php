@@ -47,7 +47,7 @@ class AssetCollectionFilterIterator extends \RecursiveFilterIterator
      *
      * @return Boolean Returns true if we have not seen this asset yet
      */
-    public function accept()
+    public function accept(): bool
     {
         $asset = $this->getInnerIterator()->current(true);
         $duplicate = false;
