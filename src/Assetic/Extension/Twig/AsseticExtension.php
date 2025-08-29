@@ -20,7 +20,7 @@ class AsseticExtension extends \Twig_Extension implements \Twig\Extension\Global
     protected $functions;
     protected $valueSupplier;
 
-    public function __construct(AssetFactory $factory, $functions = array(), ?ValueSupplierInterface $valueSupplier = null)
+    public function __construct(AssetFactory $factory, $functions = array(), ValueSupplierInterface $valueSupplier = null)
     {
         $this->factory = $factory;
         $this->functions = array();
