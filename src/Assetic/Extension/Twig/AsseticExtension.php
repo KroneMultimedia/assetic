@@ -21,7 +21,7 @@ class AsseticExtension extends AbstractExtension implements \Twig\Extension\Glob
     protected $functions;
     protected $valueSupplier;
 
-    public function __construct(AssetFactory $factory, $functions = array(), ValueSupplierInterface $valueSupplier = null)
+    public function __construct(AssetFactory $factory, $functions = array(), ?ValueSupplierInterface $valueSupplier = null)
     {
         $this->factory = $factory;
         $this->functions = array();
