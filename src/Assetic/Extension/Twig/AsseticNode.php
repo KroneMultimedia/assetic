@@ -29,9 +29,8 @@ class AsseticNode extends Node
      * @param string         $name       The name of the asset
      * @param array          $attributes An array of attributes
      * @param integer        $lineno     The line number
-     * @param string         $tag        The tag name
      */
-    public function __construct(AssetInterface $asset, Node $body, array $inputs, array $filters, $name, array $attributes = array(), $lineno = 0, $tag = null)
+    public function __construct(AssetInterface $asset, Node $body, array $inputs, array $filters, $name, array $attributes = array(), $lineno = 0)
     {
         $nodes = array('body' => $body);
         $attributes = array_replace(
@@ -39,7 +38,7 @@ class AsseticNode extends Node
             $attributes,
             array('asset' => $asset, 'inputs' => $inputs, 'filters' => $filters, 'name' => $name)
         );
-        parent::__construct($nodes, $attributes, $lineno, $tag);
+        parent::__construct($nodes, $attributes, $lineno);
     }
     public function compile(Compiler $compiler): void
     {
